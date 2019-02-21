@@ -1,76 +1,44 @@
 ﻿@using ProyectoRazor.Models
 @model IEnumerable<ProyectoRazor.Models.Equipo>
-
 @{
     ViewBag.Title = "ListaEquiposPilotosCategoria";
 }
-
 @Html.ActionLink("Volver a la página principal", "Index", "Home")
 
 <h2>Lista de equipos de @ViewBag.Categoria</h2>
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
+        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
         <th></th>
     </tr>
-
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.ActionLink("Detalles", "DetalleEquipo", new { idequipo = item.IdEquipo })
-            </td>
+            <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+            <td>@Html.ActionLink("Detalles", "DetalleEquipo", new { idequipo = item.IdEquipo })</td>
         </tr>
     }
-
 </table>
 
 <h2>Lista de pilotos de @ViewBag.Categoria</h2>
 
 <table class="table">
     <tr>
-        <th>
-            Dorsal
-        </th>
-        <th>
-            Nombre
-        </th>
-        <th>
-            Apellido
-        </th>
-        <th>
-            Titulos
-        </th>
-        <th>
-            Debut
-        </th>
+        <th>Dorsal</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Titulos</th>
+        <th>Debut</th>
     </tr>
-
     @foreach (Piloto piloto in ViewBag.Pilotos)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => piloto.Dorsal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => piloto.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => piloto.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => piloto.Titulos)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => piloto.Debut)
-            </td>
+            <td>@Html.DisplayFor(modelItem => piloto.Dorsal)</td>
+            <td>@Html.DisplayFor(modelItem => piloto.Nombre)</td>
+            <td>@Html.DisplayFor(modelItem => piloto.Apellido)</td>
+            <td>@Html.DisplayFor(modelItem => piloto.Titulos)</td>
+            <td>@Html.DisplayFor(modelItem => piloto.Debut)</td>
         </tr>
     }
-
 </table>

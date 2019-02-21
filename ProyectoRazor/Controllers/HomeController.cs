@@ -46,6 +46,11 @@ namespace ProyectoRazor.Controllers
             ViewBag.Equipo = equipo;
             return View(piloto);
         }
+        public ActionResult EliminarPiloto(int idpiloto)
+        {
+            this.repo.EliminarPiloto(idpiloto);
+            return RedirectToAction("Index", "Home");
+        }
         [ChildActionOnly]
         public ActionResult _PartialCategorias()
         {
