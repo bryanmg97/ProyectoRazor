@@ -131,7 +131,7 @@
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\Piloto.cs" />
-    <Compile Include="Models\RazorContext.cs" />
+    <Compile Include="Data\RazorContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\RepositoryRazor.cs" />
   </ItemGroup>
