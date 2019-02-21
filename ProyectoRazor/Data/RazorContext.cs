@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ProyectoRazor.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace ProyectoRazor.Models
+namespace ProyectoRazor.Data
 {
     public class RazorContext : DbContext
     {
