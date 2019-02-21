@@ -1,0 +1,73 @@
+﻿@model ProyectoRazor.Models.Piloto
+
+@{
+    ViewBag.Title = "DetallePiloto";
+}
+
+<h2>Detalles del Piloto</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Dorsal) @Html.DisplayFor(model => model.Nombre) @Html.DisplayFor(model => model.Apellido) </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dorsal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dorsal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipo)
+        </dt>
+
+        <dd>
+            @ViewBag.Equipo
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @ViewBag.Categoria
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Debut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Debut)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Volver", "DetalleEquipo", new { idequipo = Model.Equipo })
+</p>

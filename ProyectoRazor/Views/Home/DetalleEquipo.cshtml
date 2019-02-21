@@ -1,0 +1,54 @@
+﻿@using ProyectoRazor.Models
+@model IEnumerable<ProyectoRazor.Models.Piloto>
+
+@{
+    ViewBag.Title = "DetalleEquipo";
+    Equipo equipo = ViewBag.Equipo;
+}
+
+<h2>Detalles del equipo @equipo.Nombre</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dorsal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Debut)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dorsal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titulos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Debut)
+        </td>
+        <td>
+            @Html.ActionLink("Detalles", "DetallePiloto", new { idpiloto = item.IdPiloto })
+        </td>
+    </tr>
+}
+
+</table>

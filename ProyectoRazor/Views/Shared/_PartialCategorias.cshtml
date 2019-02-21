@@ -1,0 +1,34 @@
+﻿@using ProyectoRazor.Models
+@model List<Categoria>
+@{
+    String categoria = "";
+}
+@{
+    <style>
+        ul {
+            text-align: center;
+        }
+        li {
+            list-style: none;
+            display: inline;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+}
+<div>
+    <h3>Categorías</h3>
+</div>
+<ul>
+    @foreach (Categoria cat in Model)
+    {
+        categoria = cat.Nombre.ToLower() + ".png";
+        <li>
+            <a href="@Url.Action("ListaEquiposPilotosCategoria", "Home", new { idcategoria = cat.IdCategoria }, null)">
+                <img src="~/Images/@categoria" class="imagen" />
+            </a>
+        </li>
+    }
+</ul>
